@@ -3,6 +3,7 @@
 namespace App\Policies;
 
 use App\Models\Post;
+use App\Models\Tour;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -11,7 +12,7 @@ class PostPolicy
     use HandlesAuthorization;
 
     public function author(User $user, Post $post){
-        if($user->id == $post->id){
+        if($user->id == $post->user_id){
             return true;
         } else{
             return false;
@@ -27,4 +28,6 @@ class PostPolicy
             return false;
         }
     }
+
+
 }

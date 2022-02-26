@@ -1,5 +1,23 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap'); 
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@100;200;300;400;500;600;700&display=swap');    
+@import url('http://fonts.cdnfonts.com/css/theano-didot?styles=844');
+
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
 @import 'comm.css';
+
+
+/* @font-face { 
+    font-family: glamour; src: url('/fonts/Glamour.woff');
+    font-family: coldiac; src: url('/fonts/Coldiac.woff');
+    font-family: zevida; src: url('/fonts/Zevida.woff');
+    font-family: uninova; src: url('/fonts/Uninova.woff');
+     } */
+

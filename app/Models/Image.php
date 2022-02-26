@@ -12,7 +12,6 @@ class Image extends Model
     protected $fillable = ['url'];
 
     //Relacion Polimorfica
-
     public function imageable(){
         return $this->morphTo();
     }

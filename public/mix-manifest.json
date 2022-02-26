@@ -1,4 +1,8 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/fonts/Coldiac.woff": "/fonts/Coldiac.woff",
+    "/fonts/Glamour.woff": "/fonts/Glamour.woff",
+    "/fonts/UnivaNova.woff": "/fonts/UnivaNova.woff",
+    "/fonts/Zevida.woff": "/fonts/Zevida.woff"
 }

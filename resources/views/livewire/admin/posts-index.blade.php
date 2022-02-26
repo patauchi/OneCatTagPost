@@ -9,6 +9,7 @@
             <thead>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Category</th>
                 <th colspan="2"></th>
             </thead>
             <tbody>
@@ -16,6 +17,7 @@
                     <tr>
                         <td> {{$post->id}} </td>
                         <td> {{$post->name}} </td>
+                        <td> {{$post->getCategory()}} </td>
                         <td width="13px">
                             <a href=" {{route('admin.posts.edit', $post)}}" class="btn btn-primary btn-sm">Editar </a>
                         </td>

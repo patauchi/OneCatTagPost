@@ -13,7 +13,7 @@
 
         @include('admin.tags.partials.form')    
 
-        {!! Form::submit('Crear categoria',['class'=> 'btn btn-primary']) !!}   
+        {!! Form::submit('Crear Tag',['class'=> 'btn btn-primary']) !!}   
         {!! Form::close() !!}
     </div>
 </div>

@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Travel</b>Agency',
+    'logo' => '<b>Kimsa</b>Travel',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -127,7 +127,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-light-primary elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -169,7 +169,7 @@ return [
 
     'right_sidebar' => false,
     'right_sidebar_icon' => 'fas fa-cogs',
-    'right_sidebar_theme' => 'dark',
+    'right_sidebar_theme' => 'light',
     'right_sidebar_slide' => true,
     'right_sidebar_push' => true,
     'right_sidebar_scrollbar_theme' => 'os-theme-light',
@@ -250,30 +250,304 @@ return [
             'text'        => 'Dashboard',
             'route'         => 'admin.home',
             'icon'        => 'fas fa-tachometer-alt fa-fw',
+            'can' => 'admin.home',
         ],
-        ['header' => 'ADMINISTRADOR'],
+
+
+        ['header' => 'DESTINATIONS',
+        'can' => 'admin.nations.index',],
         [
-            'text' => 'Categorias',
-            'route'  => 'admin.categories.index',
-            'icon' => 'fab fa-fw fa-buffer',
-            'active' => ['admin/categories*']
+            'text'    => 'Countries',
+            'icon'    => 'fas fa-globe-americas',
+            'can' => 'admin.nations.index',
+            'submenu' => [
+                [
+                    'text' => 'Manage Countries',
+                    'route'  => 'admin.nations.index',  
+                    'can' => 'admin.nations.index',              ],
+                [
+                    'text' => 'Add New Country',
+                    'route'  => 'admin.nations.create',
+                    'can' => 'admin.nations.create',
+                ]
+            ],
         ],
         [
-            'text' => 'Etiquetas',
-            'route'  => 'admin.tags.index',
-            'icon' => 'far fa-fw fa-bookmark',
-            'active' => ['admin/tags*']
+            'text'    => 'Destinations',
+            'icon'    => 'fas fa-map-marked-alt',
+            'can' => 'admin.destinations.index',
+            'submenu' => [
+                [
+                    'text' => 'Manage Destinations',
+                    'can' => 'admin.destinations.index',
+                    'route'  => 'admin.destinations.index',
+                ],
+                [
+                    'text' => 'Add New Destination',
+                    'can' => 'admin.destinations.create',
+                    'route'  => 'admin.destinations.create',
+                ]
+            ],
         ],
-        ['header' => 'Opciones de Blog'],
+        ['header' => 'PACKAGES',
+        'can' => 'admin.tours.index',],
+        
         [
-            'text'    => 'Lista de post',
-            'route' => 'admin.posts.index',
-            'icon' => 'fas fa-fw fa-clipboard',
+            'text'    => 'Tours',
+            'icon'    => 'fas fa-box-open',
+            'can' => 'admin.tours.index',
+            'submenu' => [
+                [
+                    'text' => 'Manage tours',
+                    'can' => 'admin.tours.index',
+                    'route'  => 'admin.tours.index',
+                ],
+                [
+                    'text' => 'Add new tour',
+                     'can' => 'admin.tours.create',
+                    'route'  => 'admin.tours.create',
+                ],                
+            ],
+        ], 
+        [
+            'text'    => 'Complement Tours',
+            'icon'    => 'fas fa-th-list',
+            'can' => 'admin.extensions.index',
+            'submenu' => [
+                [
+                    'text' => 'Manage Complements',
+                    'can' => 'admin.extensions.index',
+                    'route'  => 'admin.extensions.index',
+                ],
+                [
+                    'text' => 'Add new Complement',
+                    'can' => 'admin.extensions.create',
+                    'route'  => 'admin.extensions.create',
+                ],                
+            ],
         ],
         [
-            'text'    => 'Crear nuevo post',
-            'route' => 'admin.posts.create',
-            'icon' => 'fas fa-fw fa-file',
+            'text'    => 'Activities by Tours',
+            'icon'    => 'fas fa-th-list',
+            'can' => 'admin.activities.index',
+            'submenu' => [
+                [
+                    'text' => 'Manage Activities',
+                    'can' => 'admin.activities.index',
+                    'route'  => 'admin.activities.index',
+                ],
+                [
+                    'text' => 'Add new Activities',
+                    'can' => 'admin.activities.create',
+                    'route'  => 'admin.activities.create',
+                ],                
+            ],
+        ],
+        [
+            'text'    => 'Hotels',
+            'icon'    => 'fas fa-hotel',
+            'can' => 'admin.hotels.index',
+            'submenu' => [
+                [
+                    'text' => 'Manage tours',
+                    'can' => 'admin.hotels.index',
+                    'route'  => 'admin.hotels.index',
+                ],
+                [
+                    'text' => 'Add new tour',
+                    'can' => 'admin.hotels.create',
+                    'route'  => 'admin.hotels.create',
+                ],                
+            ],
+        ],
+
+        ['header' => 'POSTS',
+        'can' => 'admin.posts.index',],
+        [
+            'text'    => 'Categories',
+            'icon'    => 'fas fa-layer-group',
+            'can' => 'admin.categories.index',
+            'submenu' => [
+                [
+                    'text' => 'Manage categories',
+                    'route'  => 'admin.categories.index',
+                    'can' => 'admin.categories.index',
+                    'active' => ['admin/categories*']
+                ],
+                [
+                    'text' => 'Add category',
+                    'can' => 'admin.categories.index',
+                    'route'  => 'admin.categories.create',
+                ],                
+            ],
+        ],
+        [
+            'text'    => 'Tags',
+            'icon'    => 'fas fa-tags',
+            'can' => 'admin.tags.index',
+            'submenu' => [
+                [
+                    'text' => 'Manage Tags',
+                    'route'  => 'admin.tags.index',
+                    'can' => 'admin.tags.index',
+                    'active' => ['admin/tags*']
+                ],
+                [
+                    'text' => 'Add new Tag',
+                    'can' => 'admin.tags.create',
+                    'route'  => 'admin.tags.create',
+                    'active' => ['admin/tags*']
+                ],                
+            ],
+        ],
+        [
+            'text'    => 'Posts',
+            'icon'    => 'far fa-sticky-note',
+            'can' => 'admin.posts.index',
+            'submenu' => [
+                [
+                    'text' => 'Manage posts',
+                    'route'  => 'admin.posts.index',
+                    'can' => 'admin.posts.index',
+                    'active' => ['admin/posts*']
+                ],
+                [
+                    'text' => 'Add new posts',
+                    'route'=>'admin.posts.create',
+                    'can' => 'admin.posts.create',
+                    
+                ],                
+            ],
+        ],
+        ['header' => 'SERVICES',
+        'can' => 'admin.entrances.index',],
+        [
+            'text' => 'Services',
+            'icon' => 'fab fa-servicestack',
+            'can' => 'admin.entrances.index',
+            'submenu' => [
+                [
+                    'text'    => 'Entrances',
+                    'icon'    => 'fas fa-hotel',
+                    'can' => 'admin.entrances.index',
+                    'route'=>'admin.entrances.index',
+                ],
+                [
+                    'text'    => 'Guides',
+                    'icon'    => 'fas fa-hiking',
+                    'can' => 'admin.guides.index',
+                    'route'=>'admin.guides.index',
+                ],
+                [
+                    'text'    => 'Hotels',
+                    'icon'    => 'fas fa-hotel',
+                    'can' => 'admin.accomodations.index',
+                    'route'=>'admin.accomodations.index',
+                ],
+                [
+                    'text'    => 'Lodges',
+                    'icon'    => 'fas fa-hotel',
+                    'can' => 'admin.lodges.index',
+                    'route'=>'admin.lodges.index',
+                ],
+                [
+                    'text'    => 'Operators',
+                    'icon'    => 'fas fa-hotel',
+                    'can' => 'admin.operators.index',
+                    'route'=>'admin.operators.index',
+                ],
+                [
+                    'text'    => 'Restaurant',
+                    'icon'    => 'fas fa-utensils',
+                    'route'=>'admin.restaurants.index',
+                    'can' => 'admin.restaurants.index',
+                ],  
+                [
+                    'text'    => 'Transport',
+                    'icon'    => 'fas fa-shuttle-van',
+                    'route'=>'admin.transfers.index',
+                    'can' => 'admin.transfers.index',
+                ],                                              
+            ]
+        ],
+        
+        ['header' => 'INQUIRES',
+        'can' => 'admin.inquires',],
+        
+        [
+            'text'    => 'Inquires',
+            'icon'    => 'fas fa-calendar-check',
+            'can' => 'admin.inquires',
+            'submenu' => [
+                [
+                    'text' => 'Make inquire',
+                    'route'  => 'admin.inquires.index',
+                    'icon'    => 'fas fa-money-check',
+                    'can' => 'admin.inquires',
+                    
+                ],
+                               
+            ],
+        ],
+        ['header' => 'ADMINISTRATOR',
+        'can' => 'admin.home'],
+        [
+            'text'    => 'Users',
+            'icon'    => 'fas fa-users',
+            'can' => 'admin.home',
+            'submenu' => [
+                [
+                    'text'    => 'Users',
+                    'route'     => 'admin.users.index',
+                    'icon' => 'fas fa-id-badge',
+                    'can' => 'admin.home',                   
+                ],
+                [
+                    'text'    => 'Roles',
+                    'route'     => 'admin.roles.index',
+                    'icon' => 'fas fa-user-lock',
+                    'can' => 'admin.home',               
+
+                ],
+                
+            ],
+        ],
+        [
+            'text'    => 'Setting',
+            'icon'    => 'fas fa-cogs',
+            'can' => 'admin.home',
+            'submenu' => [
+                [
+                    'text' => 'System settings',
+                    'icon'    => 'fas fa-cog',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Website settings',
+                    'icon'    => 'fas fa-toolbox',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Payment settings',
+                    'icon'    => 'far fa-credit-card',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'SMTP settings',
+                    'icon'    => 'fas fa-mail-bulk',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Setting social',
+                    'icon'    => 'fas fa-share-alt',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'About',
+                    'icon'    => 'fas fa-user-secret',
+                    'url'  => '#',
+                ],
+            ],
         ],
 
     ],

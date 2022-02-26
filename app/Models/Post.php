@@ -10,8 +10,6 @@ class Post extends Model
 {
     use HasFactory;
 
-   
-
 
     protected $guarded = ['id','created_at','updated_at'];
     
@@ -36,6 +34,20 @@ class Post extends Model
     //relacion  1 a 1 polimorfica
     public function image(){
         return $this->morphOne(Image::class, 'imageable');
+    }
+
+    //relacion  1 a 1 polimorfica
+    public function imagethumb(){
+        return $this->morphOne(Imagethumb::class, 'imageable');
+    }
+
+    //relacion  1 a 1 polimorfica
+    public function imagefull(){
+        return $this->morphOne(Imagefull::class, 'imageable');
+    }
+
+    public function getCategory(){
+        return Category::where('id', $this->category_id)->first()->name;
     }
 
 }

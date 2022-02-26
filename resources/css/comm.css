@@ -9,3 +9,16 @@
 @media (min-width:10240px){
     .boxContainer{@apply px-8;}
 }
+
+
+#sortbox:checked ~ #sortboxmenu {
+    opacity: 1;
+}
+
+
+.tracking-1{
+    letter-spacing: 0.12em;
+}
+.tracking-2{
+    letter-spacing: 0.24em;
+}
